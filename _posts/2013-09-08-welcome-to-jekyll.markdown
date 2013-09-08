@@ -25,7 +25,7 @@ print_hi('Tom')
 
 
 {% highlight java %}
-public class Test(){
+public class Test2(){
 	
 	public void execute() throws Exception {
 		//comment
