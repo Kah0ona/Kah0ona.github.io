@@ -88,10 +88,14 @@ a {
 
 }
 
+.contact a {
+	font-size: 0.7rem;
+}
+
 .me {
 	font-size: 2rem;
 }
-.location, .trade{
+.location, .trade {
 	display: block;
 	color: #444;
 	font-size: 0.8rem;
