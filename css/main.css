@@ -111,3 +111,9 @@ font-size: smaller;
 text-transform: uppercase;
 font-weight: bold;
 }
+
+@media handheld, only screen and (max-width: 480px) {
+	.date {
+		float: none;
+	}
+}
