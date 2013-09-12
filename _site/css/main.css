@@ -1,7 +1,109 @@
 body {
-	font-family: "futura-pt",sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 1.7em;
+	font-family: 'Habibi', arial, serif;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	display: block;
+}
+
+
+p {
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	display: block;
+
+}
+
+article.post, #home, #about {
+	max-width: 40rem;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#home h1 {
+	text-align: center;
+}
+
+#home .date {
+	float: right;
+}
+
+.highlight {
+	background-color: #f7f7f7;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-radius: 6px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Goudy Bookletter 1911";
+	font-weight: 100;
+}
+
+header hgroup {
+	text-align: center;
+}
+
+
+h1 {
+	line-height: 2.8rem;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+h1 {
+	display: block;
+	font-size: 2em;
+	-webkit-margin-before: 0.67em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: bold;
+}
+
+h1.title {
+	font-size: 4.5rem;
+	line-height: 5.5rem;
+	margin-bottom: 0;
+	color: #5a2626;
+}
+
+a {
+	color: #930709;
+	text-decoration: none;
+}
+
+.contact, .nav {
+	text-align: center;
+}
+
+.contact {
+	max-width: 40rem;
+	border-bottom: 1px solid #ededed;
+	border-top: 1px solid #ededed;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 110px;
+
+}
+
+.me {
+	font-size: 2rem;
+}
+.location, .trade{
+	display: block;
 	color: #444;
+	font-size: 0.8rem;
+}
+
+.ava {
+	float: right;
+	margin: 10px;
+}
+
+.smallcap {
+font-size: smaller;
+text-transform: uppercase;
+font-weight: bold;
 }
