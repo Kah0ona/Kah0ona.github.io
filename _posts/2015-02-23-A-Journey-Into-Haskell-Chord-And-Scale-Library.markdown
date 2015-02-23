@@ -172,7 +172,7 @@ If we tune a string to E, we'd use:
 	ghci> guitarString E
 	Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E]
 
-So what about a complete guitar then? A guitar in standard tuning, has 6 string, from thick to thin they are tuned E, A, D, G, B, E:
+So what about a complete guitar then? A normal guitar, with standard tuning, has 6 strings. From thick to thin they are tuned E, A, D, G, B, E:
 	
 	standardTuning :: [Scale Note]
 	standardTuning = map guitarString [E,A,D,G,B,E]
