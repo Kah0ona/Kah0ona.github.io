@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<div class="product">
+	{{page.productName}}<br/>
+	{{page.productPrice}}<br/>
+	{{page.productImage}}
+</div>
+<div>
+	{{content}}
+</div>
+
+<ul>
+{% for opt in page.productOptions %}
+	<li>{{opt.optionName}}</li>
+{% endfor %}
+</ul>

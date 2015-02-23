@@ -13,19 +13,19 @@
         <link rel="stylesheet" href="/css/main.css">
 
         <link href='http://fonts.googleapis.com/css?family=Habibi|Droid+Sans|Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
-
+        <script type="text/javascript" src="/js/jquery.js" ></script>
     </head>
     <body>
       <div class="container">
-            
-
             <div class="nav">
               <a class="home" href="/">Home</a>
             </div>
-
+            <ul>
+              {% for cat in page.topCategories %}
+                <li><a href="{{cat.permalink}}">{{cat.categoryName}}</a></li>
+              {% endfor %}
+            </ul>
             {{ content }}
-
-
             <div class="contact">
               <p>
                 <span class="me">Marten Sytema</span> 

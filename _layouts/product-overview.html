@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<script type="text/javascript" src="http://mattlayton.co.uk/gridify/js/jquery.smartresize.js" ></script>
+<script type="text/javascript" src="http://mattlayton.co.uk/gridify/js/jquery.gridify.js" ></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.product-overview').gridify({ items: 3 });
+	});
+</script>
+
+<ul class="product-overview product-category-{{page.Category_id}}">
+	{% for p in page.products %}
+	<li>
+		<div class="product product-{{p.Product_id}}" itemscope="" itemtype="http://schema.org/Product">
+			<!-- Rendering single product -->
+			<div class="product-image">
+				<a href="{{p.permalink}}">
+					<img src="http://webshop.lokaalgevonden.nl/{{page.imageDish}}">
+				</a>
+			</div>
+			<div class="product-data-container">
+				<div class="product-title product-title-{{p.Product_id}}" itemprop="name">
+					{{p.productName}}
+				</div>
+				<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+					<div class="product-price product-price-{{p.Product_id}}" itemprop="price">{{p.productPrice}}</div>
+					<meta itemprop="priceCurrency" content="EUR">
+					<link itemprop="availability" href="http://schema.org/InStock">
+					<div style="clear:both"></div>
+					<form class="form ">
+						<div class="control-group" style="margin-top: 15px;">
+							<label class="control-label control-label-{{p.Product_id}}" for="surname">Aantal: *</label>
+							<div class="controls">		
+								<input class="input-large product-amount-{{p.Product_id}}" name="product-amount" id="product-amount-{{p.Product_id}}" value="1" type="text"> 
+							</div>
+						</div>
+						<!-- Product options, if any -->
+						{% for opt in p.productOptions %}							
+						<div class="control-group" style="margin-top: 15px;">
+							<label class="control-label control-label-{{p.Product_id}}" id="ProductOptionName_{{p.productOption_id}}" for="Type">Type:</label>
+
+							<div class="controls controls-{{p.Product_id}}">
+								<select name="size" class="input-large ProductOptionSelector" id="ProductOption_{{p.productOption_id}}" option_id="{{p.productOption_id}}">
+									{% for val in opt.optionValues %}
+									<option extraprice="{{val.extraPrice}}" value="{{val.productOptionValue_id}}" valuename="{{val.optionValue}}" id="ProductOptionValueName_{{val.productOptionValue_id}}">
+										{{val.optionValue}} (€ {{val.extraPrice}})
+									</option>
+									{% endfor %}
+								</select>
+								<p class="productoptionvalueinfo" id="productoptionvalueinfo-{{p.productOption_id}}"></p>
+							</div>
+						</div>	
+						{% endfor %}
+					</form>	
+					<span product-type="product" product-index="0" product-id="{{p.Product_id}}" class="addtocart ">
+						<a href="#" class="btn"><i class="icon-shopping-cart icon-white"></i> Toevoegen</a>
+					</span>
+					<div class="product-detail-button product-detail-button-{{p.Product_id}}">
+						<a href="{{p.permalink}}" class="product-detail-link">details</a>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+			</div>
+		</div>				
+	</li>
+	{% endfor %}
+</ul>
