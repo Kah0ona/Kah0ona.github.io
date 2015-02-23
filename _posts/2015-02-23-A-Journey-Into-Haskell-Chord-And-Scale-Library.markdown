@@ -13,8 +13,10 @@ Another hobby of mine is playing guitar. I'm not actually very good at it, nor d
 but I can crank out the odd Bob Dylan song. 
  
 
-=== Building blocks of music: notes, chords and scales ===
-**tl;dr; Music consists of 12 possible notes. Combinations of notes form chords and scales.**
+Building blocks of music: notes, chords and scales
+==================================================
+
+**TL;DR; Music consists of 12 possible notes. Combinations of notes form chords and scales.**
 
 I decided I wanted to create a type-safe library that can generate and manipulate musical scales and chords. Therefore, first some very basic 
 musical theory. Musical theory can be very complex, but luckily I'm a bit of a novice myself so I can't get carried away. 
@@ -37,7 +39,9 @@ The notes in a scale aren't meant to be played at once, but are useful as buildi
 Together, chords and melodies make songs.
 
 
-=== Modeling music in Haskell ===
+Modeling music in Haskell
+=========================
+
 I wanted to get my feet wet on Algebraic Data Types. So I started out by modeling the notes. 
 
 	data Note = A | A' | B | C | C' | D | D' | E | F | F' | G | G' deriving (Show, Ord, Eq, Enum)
@@ -256,7 +260,8 @@ That's it. I had a lot of fun writing this. The library can be improved by addin
 And real musicians could probably dream up way more stuff than I have.
 
 
-=== Conclusion ===
+Conclusion
+==========
 Algebraic Data Types are a great way to specify your data. Once I defined a few basic functions as building blocks, it was really remarkable how easy more complex functions were distilled, simply by composing smaller functions. And each time I was amazed how easy it was to get to the next step in the library. 
 
 As a final note, I just LOVE how clean, compact and elegant haskell code is. Even when a beginner like me writes it, because I am pretty sure there is enough space for improvements. But whatever, in around 150 lines of code and a lazy Sunday, I created a nifty little toolkit, which was for me as fun to use as it was to write. I program mostly in Java in my day job, and this feels just sooo much cleaner and efficient.
