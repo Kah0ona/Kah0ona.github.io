@@ -179,7 +179,14 @@ So what about a complete guitar then? A guitar in standard tuning, has 6 string,
 
 Test 1,2,3...
 
-	[Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E],Scale [A,A',B,C,C',D,D',E,F,F',G,G',A,A,A',B,C,C',D,D',E,F,F',G,G',A],Scale [D,D',E,F,F',G,G',A,A',B,C,C',D,D,D',E,F,F',G,G',A,A',B,C,C',D],Scale [G,G',A,A',B,C,C',D,D',E,F,F',G,G,G',A,A',B,C,C',D,D',E,F,F',G],Scale [B,C,C',D,D',E,F,F',G,G',A,A',B,B,C,C',D,D',E,F,F',G,G',A,A',B],Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E]]
+	[
+	 Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E],
+	 Scale [A,A',B,C,C',D,D',E,F,F',G,G',A,A,A',B,C,C',D,D',E,F,F',G,G',A],
+	 Scale [D,D',E,F,F',G,G',A,A',B,C,C',D,D,D',E,F,F',G,G',A,A',B,C,C',D],
+	 Scale [G,G',A,A',B,C,C',D,D',E,F,F',G,G,G',A,A',B,C,C',D,D',E,F,F',G],
+	 Scale [B,C,C',D,D',E,F,F',G,G',A,A',B,B,C,C',D,D',E,F,F',G,G',A,A',B],
+	 Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E]
+	]
 
 Hooray. Okay, so what if we want to play the notes of an E Major scale on the thickest string  tuned in E, which frets would we have to push?
 The next function will calculate this. 
