@@ -188,8 +188,8 @@ Test 1,2,3...
 	 Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E]
 	]
 
-Hooray. Okay, so what if we want to play the notes of an E Major scale on the thickest string  tuned in E, which frets would we have to push?
-The next function will calculate this. 
+Hooray. Okay, so what if we want to play the notes of an E Major scale on the thickest string (which is tuned in E), 
+which frets would we have to push? The next function will calculate this:
 
 	getPositionOfNotes :: (Scale Note) -> (Scale Note) -> [Int]
 	getPositionOfNotes (Scale []) _ = []
@@ -201,31 +201,34 @@ The next function will calculate this.
 Let's try:
 
 	ghci> getPositionOfNotes (guitarString E) (majorScale E)
+	[0,2,4,5,7,9,11,12,13,15,17,18,20,22,24,25]
 
-[0,2,4,5,7,9,11,12,13,15,17,18,20,22,24,25]
+If you have a guitar, try it out, and sing along the famous `do re mi`. (`0` means strum the string without pushing any fret).
 
-If you have a guitar, try it out, and sing along the famous **do re mi** (0 means strum the string without pushing any fret).
-
-Okay, how about chords. What if we want to play an E Major chord on a guitar that has standard tuning? I've built this function, to return a list of fret numbers to push, from thickest to thinnest string:
+Okay, how about chords. What if we want to play an E major chord on a guitar that has standard tuning? 
+The following function gives me that answer. It returns a list of fret numbers to push on each string (thickest string on the left):
 
 	frets :: (Scale Note) -> [Scale Note] -> Int -> [Int]
 	frets (Scale []) strings minimumFret = listofzeroes (minimumFret + (length strings)) 
 	frets _ [] _ = []
-	frets chord strings minimumFret = map (\string -> head $ filter (>= minimumFret) (getPositionOfNotes string chord)) strings
+	frets chord strings minimumFret = map (\string -> head $ 
+													  filter (>= minimumFret) 
+														(getPositionOfNotes string chord)) strings
 
 Let's see: 
 
 	ghci> frets (majorTriad E) standardTuning 0
 	[0,2,2,1,0,0]
 
-If you try this on a guitar that is tuned in standard tuning, and strum all strings at once, you'll notice it sounds good. Wondering what 
-the last parameter is?  Well you see, an Major E chord can be played on multiple places on the neck. If I put it to 0, it'll show the E 
+Try this on a guitar in standard tuning, and strum all strings at once. You'll notice it sounds good. Combine it with `majorTriad D` 
+and `majorTriad A`, and you'll sound like you know what you're doing. Wondering what the last parameter is?  
+Well you see, all chords can be played on multiple places on the neck. If I put it to 0, it'll show the E 
 chord most towards the top of the guitar. If I put it to 7, you'll notice a different position of the E Major chord.
 
 	ghci> frets (majorTriad E) standardTuning 7
 	[7,7,9,9,9,7]
 
-This particular chord is called a barre chord, since a guitar player needs to 'bar' his first finger on all 6 strings to be able to play it. 
+This particular chord is called a barre chord. A guitarist needs to 'bar' his first finger on all 6 strings to be able to play it. 
 The advantage is that if you keep your hand in the same 'grip' and move it up the neck, you get the major chords of all the possible notes. 
 Plus on an electric guitar you'll sound like a true rock star. 
 
@@ -240,13 +243,12 @@ A common way to communicate how a chord is played on a guitar, is using a follow
 	| | | | | |
 	| | | | | |	
 
-With some imagination you'll see that it's supposed to be the neck of a guitar, first fret is first row below the ========. 
-The vertical bars are strings, thickes most left. If there is an o displayed it means, press that fret. 
+With some imagination you'll see that it's supposed to be the neck of a guitar, first fret is the first line below the ========. 
+The vertical bars are strings, thickes most left. An o means 'press that fret'. 
 So the major E Chord above can be played with 3 fingers, leaving the other strings open, and strumming all 6 strings. 
-For completeness a list of fret numbers is also displayed.
+For convenience, a list of fret numbers is also displayed in the first line.
 
-I've implemented a function that generates this as follows (omitting some helper functions, see github for the complete source):
-
+I've implemented a function for generating these diagrams as follows. (I omitted some helper functions, see github for the complete source):
 
 	fretdiagram :: (Scale Note) -> [Scale Note] -> Int -> [Char]
 	fretdiagram chord tuning minimumFret =
@@ -259,12 +261,12 @@ I've implemented a function that generates this as follows (omitting some helper
 					in
 						header ++ divider ++ (join "\n" fretrows) ++ "\n\n"
 
-Testing this with the following code, the output will be as the diagram above:
+Testing it out with the following one-liner, and it'll print the diagram above:
 
 	ghci> putStr $ fretdiagram (majorTriad E) standardTuning 0	
 
-That's it. I had a lot of fun writing this. The library can be improved by adding more scales, tunings and chords. 
-And real musicians could probably dream up way more stuff than I have.
+That's it. I had a lot of fun writing this small library. The library can be improved by adding more scales, tunings and chords. 
+And real musicians could probably dream up way more stuff to put in than I could.
 
 
 Conclusion
