@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A journey into Haskell: Harmony, a library for working with notes, chords and scales"
+title:  "A journey into Haskell: Harmony, a library for music"
 date:   2015-02-23 19:19:02
 categories: software Haskell
 ---
@@ -153,7 +153,7 @@ on such indices. I've implemented some of the common chords and scales:
 
 It is not even close to a complete list, but you get the point. 
 
-Okay, on this github repo (link), you will find some more utility functions like `sizeOf`, `scaleContains`, `noteAt`, and `transpose`.
+Okay, on this [github repo](http://github.com/Kah0ona/harmony-haskell "Harmony github repo"), you will find some more utility functions like `sizeOf`, `scaleContains`, `noteAt`, and `transpose`.
 The last one is quite handy, it can transpose a scale from a root X to a root Y.
 
 Since I am a guitar player, I decided I wanted to put some guitar specific functionality in there. To start off,
@@ -244,7 +244,7 @@ A common way to communicate how a chord is played on a guitar, is using a follow
 	| | | | | |	
 
 With some imagination you'll see that it's supposed to be the neck of a guitar, first fret is the first line below the ========. 
-The vertical bars are strings, thickes most left. An o means 'press that fret'. 
+The vertical bars are strings, thickest most left. An o means 'press that fret'. 
 So the major E Chord above can be played with 3 fingers, leaving the other strings open, and strumming all 6 strings. 
 For convenience, a list of fret numbers is also displayed in the first line.
 
