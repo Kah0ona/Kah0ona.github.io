@@ -94,6 +94,7 @@ A useful helper function will be a function that gets the note `n` chromatic ste
 	noteAtInterval baseNote n = iterate next baseNote !! n
 
 Eg.
+
 	ghci> noteAtInterval C 3
 	D'
 
