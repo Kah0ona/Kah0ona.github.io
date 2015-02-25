@@ -48,7 +48,7 @@ I wanted to get my feet wet on Algebraic Data Types. So I started out by modelin
 
 `#`s are not allowed, so I used apostrofe (') for the sharp sign. Notes derive Enum, so we can define ranges as well:
 
-	ghci> [A .. E] 
+	*Harmony> [A .. E] 
 	[A,A',B,C,C',D,D',E]
 
 Pretty cool. Alright, next up, we need to define a scale. Basically a scale is a list of notes, 
@@ -79,13 +79,13 @@ With this, we have the types ligned up nicely, so let's continue to to make some
 
 The word chromatic means 'smallest step'. On a piano this means the directly adjacent key to the right for `next` and left for `prev`. Let's test it: 
 
-	ghci> next A
+	*Harmony> next A
 	A'
-	ghci> next G'
+	*Harmony> next G'
 	A
-	ghci> prev B
+	*Harmony> prev B
 	A'
-	ghci> prev A
+	*Harmony> prev A
 	G'
 
 A useful helper function will be a function that gets the note `n` chromatic steps away:
@@ -95,7 +95,7 @@ A useful helper function will be a function that gets the note `n` chromatic ste
 
 Eg.
 
-	ghci> noteAtInterval C 3
+	*Harmony> noteAtInterval C 3
 	D'
 
 Alright, lets create a Scale! I've written the following function that does exactly that
@@ -114,12 +114,12 @@ define a majorScale as follows:
 
 Let's test: 
 
-	ghci> majorScale C
+	*Harmony> majorScale C
 	Scale [C,D,E,F,G,A,B,C]	
 
 Woop Woop! Another, E Major scale:
 
-	ghci> majorScale E
+	*Harmony> majorScale E
 	Scale [E,F',G',A,B,C',D',E]
 
 I like. Following this pattern, we can define other scales and chords as well. There are formulae for generating scales and chords based 
@@ -170,7 +170,7 @@ Modeling a guitar string is easy, it's just a chromatic scale of 20 steps, start
 
 If we tune a string to E, we'd use:
 	
-	ghci> guitarString E
+	*Harmony> guitarString E
 	Scale [E,F,F',G,G',A,A',B,C,C',D,D',E,E,F,F',G,G',A,A',B,C,C',D,D',E]
 
 So what about a complete guitar then? A normal guitar, with standard tuning, has 6 strings. From thick to thin they are tuned E, A, D, G, B, E:
@@ -201,7 +201,7 @@ which frets would we have to push? The next function will calculate this:
 
 Let's try:
 
-	ghci> getPositionOfNotes (guitarString E) (majorScale E)
+	*Harmony> getPositionOfNotes (guitarString E) (majorScale E)
 	[0,2,4,5,7,9,11,12,13,15,17,18,20,22,24,25]
 
 If you have a guitar, try it out, and sing along the famous `do re mi`. (`0` means strum the string without pushing any fret).
@@ -218,7 +218,7 @@ The following function gives me that answer. It returns a list of fret numbers t
 
 Let's see: 
 
-	ghci> frets (majorTriad E) standardTuning 0
+	*Harmony> frets (majorTriad E) standardTuning 0
 	[0,2,2,1,0,0]
 
 Try this on a guitar in standard tuning, and strum all strings at once. You'll notice it sounds good. Combine it with `majorTriad D` 
@@ -226,7 +226,7 @@ and `majorTriad A`, and you'll sound like you know what you're doing. Wondering 
 Well you see, all chords can be played on multiple places on the neck. If I put it to 0, it'll show the E 
 chord most towards the top of the guitar. If I put it to 7, you'll notice a different position of the E Major chord.
 
-	ghci> frets (majorTriad E) standardTuning 7
+	*Harmony> frets (majorTriad E) standardTuning 7
 	[7,7,9,9,9,7]
 
 This particular chord is called a barre chord. A guitarist needs to 'bar' his first finger on all 6 strings to be able to play it. 
@@ -264,7 +264,7 @@ I've implemented a function for generating these diagrams as follows. (I omitted
 
 Testing it out with the following one-liner, and it'll print the diagram above:
 
-	ghci> putStr $ fretdiagram (majorTriad E) standardTuning 0	
+	*Harmony> putStr $ fretdiagram (majorTriad E) standardTuning 0	
 
 That's it. I had a lot of fun writing this small library. The library can be improved by adding more scales, tunings and chords. 
 And real musicians could probably dream up way more stuff to put in than I could.
