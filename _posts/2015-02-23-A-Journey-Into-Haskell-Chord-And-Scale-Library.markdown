@@ -272,8 +272,10 @@ And real musicians could probably dream up way more stuff to put in than I could
 
 Conclusion
 ==========
-Algebraic Data Types are a great way to specify your data. Once I defined a few basic functions as building blocks, it was really remarkable how easy more complex functions were distilled, simply by composing smaller functions. And each time I was amazed how easy it was to get to the next step in the library. 
+Algebraic Data Types are a great to model the domain. Once I defined a few basic functions around those data types, 
+I found it really remarkable how easy more complex functions were implemented. Simply by composing smaller functions.
 
-As a final note, I just LOVE how clean, compact and elegant haskell code is. Even when a beginner like me writes it, because I am pretty sure there is enough space for improvements. But whatever, in around 150 lines of code and a lazy Sunday, I created a nifty little toolkit, which was for me as fun to use as it was to write. I program mostly in Java in my day job, and this feels just sooo much cleaner and efficient.
+As a final note, I just love how clean, compact and elegant Haskell code is. Even when a beginner like me writes it. I am pretty sure there is enough space for improvements. But whatever, in around 150 lines of code and a lazy Sunday, 
+I created a nifty little toolkit. I program mostly in Java in my day job, and this feels just so much cleaner and efficient.
 
 If you have any comments, tips or hints on this article; or on the code, please let me know.
