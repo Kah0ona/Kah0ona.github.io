@@ -5,9 +5,9 @@ date:   2015-02-23 19:19:02
 categories: software Haskell
 ---
 
-Recently I felt the urge again to work on a little pet project. I decided to give Haskell a go,
-and I loved it. I read some articles and books about it, followed learnyouahaskell.com and played around in the REPL, but 
-nothing speeds up the learning process more than making something useful.
+Recently I felt the urge again to work on a little pet project. I decided to give [Haskell](https://www.haskell.org/) a go,
+and I loved it. I read some articles and books about it, followed [learnyouahaskell.com](http://learnyouahaskell.com) and 
+played around in the REPL, but nothing speeds up the learning process more than making something useful.
 
 Another hobby of mine is playing guitar. I'm not actually very good at it, nor do I know a lot about musical theory, 
 but I can crank out the odd Bob Dylan song. 
@@ -26,7 +26,7 @@ In music there are 12 different **notes**:
 A, A#, B, C, C#, D, D#, E, F, F#, G, G#
 
 See the ones with the #? They are called 'sharps', and on a piano, those are the black keys. The 'normal' notes correspond to the white keys. 
-They repeat, so the succesor note of G# is A again. If you think you are missing both a B# and a E#, you are right, but there is some complicated theory behind that of why those notes do not exist don't exist.  
+They repeat, so the succesor note of G# is A again. If you think you are missing both a B# and a E#, you are right, but there is some [complicated theory](http://en.wikipedia.org/wiki/Scale_(music)) behind that of why those notes do not exist.  
 
 Then there are two more words to explain, before we get to the code: **chords** and **scales**. 
 
