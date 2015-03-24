@@ -16,7 +16,7 @@ but I can crank out the odd Bob Dylan song.
 Building blocks of music: notes, chords and scales
 ==================================================
 
-**TL;DR; Music consists of 12 possible notes. Combinations of notes form chords and scales.**
+**TL;DR; (Western) music consists of 12 possible notes. Combinations of notes form chords and scales.**
 
 I decided I wanted to create a type-safe library that can generate and manipulate musical scales and chords. Therefore, first some very basic 
 musical theory. Musical theory can be very complex, but luckily I'm a bit of a novice myself so I can't get carried away. 
