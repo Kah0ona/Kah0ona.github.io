@@ -272,7 +272,7 @@ And real musicians could probably dream up way more stuff to put in than I could
 
 Conclusion
 ==========
-Algebraic Data Types are a great to model the domain. Once I defined a few basic functions around those data types, 
+Algebraic Data Types are great to model the domain. Once I defined a few basic functions around those data types, 
 I found it really remarkable how easy more complex functions were implemented. Simply by composing smaller functions.
 
 As a final note, I just love how clean, compact and elegant Haskell code is. Even when a beginner like me writes it. I am pretty sure there is enough space for improvements. But whatever, in around 150 lines of code and a lazy Sunday, 
